@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#docker run --name="mariadb" -ti  -p 3306:3306   \
+docker run --name="mariadb" -d -p 3306:3306    \
+           -v /var/sotolito/vols/mariadb/etc/my.cnf:/etc/my.cnf \
+           -v /var/sotolito/vols/mariadb/etc/my.cnf.d:/etc/my.cnf.d \
+           -v /var/sotolito/vols/mariadb/run:/run \
+           -v /var/sotolito/vols/mariadb/var/lib/mysql:/var/lib/mysql \
+           -v /var/sotolito/vols/mariadb/var/log/mariadb:/var/log/mariadb \
+           -v /var/sotolito/vols/mariadb/var/tmp:/var/tmp \
+           -v /var/sotolito/vols/mariadb/var/run/mariadb:/var/run/mariadb \
+           -e "LANG=en_US.UTF-8" \
+           -e "LC_MESSAGES=POSIX" \
+           -e "LANGUAGE=en_US.UTF-8" \
+           -e "LC_CTYPE=en_US.UTF-8" \
+           sotolitolabs-cubie/mariadb  
+
+
+

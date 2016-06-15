@@ -1,0 +1,25 @@
+#/bin/bash
+
+IMAGE_VERSION=9.10.3-12.P4
+IMAGE_NAME=sotolitolabs-cubie/bind
+IMAGE_TAGNAME=$IMAGE_NAME:$IMAGE_VERSION
+
+dockerize -t $IMAGE_NAME \
+                   --symlinks preserve  \
+                   --filetools \
+                   --add-file /bin/bash /bin/bash \
+                   --user named \
+                   --add-file /bin/strace /bin/strace \
+                   --add-file /etc/localtime /etc/localtime\
+                   --add-file /usr/sbin/named /usr/sbin/named \
+                   --add-file /etc/crypto-policies/ /etc/crypto-policies/ \
+                   --add-file /usr/sbin/rndc /usr/sbin/rndc \
+                   --add-file /usr/sbin/rndc-confgen /usr/sbin/rndc-confgen \
+                   --add-file /usr/sbin/tsig-keygen /usr/sbin/tsig-keygen \
+                   --entrypoint "/usr/sbin/named -f -u named"
+
+                   #/bin/bash
+
+docker tag -f $IMAGE_NAME $IMAGE_NAME:latest
+docker tag -f $IMAGE_NAME $IMAGE_TAGNAME
+

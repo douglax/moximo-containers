@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#docker run --name="php-fpm" -ti    \
+docker run --name="php-fpm" -d  -p 9090:9090    \
+           -v /var/sotolito/vols/php-fpm/var:/var/ \
+           -v /var/sotolito/vols/php-fpm/etc/php-fpm.conf:/etc/php-fpm.conf \
+           -v /var/sotolito/vols/php-fpm/etc/php-fpm.d:/etc/php-fpm.d \
+           -v /var/sotolito/vols/php-fpm/etc/php.ini:/etc/php.ini \
+           -v /var/sotolito/vols/php-fpm/etc/php.d/:/etc/php.d/ \
+           -v /var/sotolito/vols/php-fpm/run/php-fpm/:/run/php-fpm \
+           -v /var/sotolito/vols/nginx/usr/share/nginx/:/usr/share/nginx/ \
+           -v /var/sotolito/vols/php-apps/:/usr/share/nginx/html/php-apps/ \
+           -v /var/sotolito/vols/mariadb/var/lib/mysql/mysql.sock:/var/lib/mysql/mysql.sock \
+           -e "LANG=en_US.UTF-8" \
+           -e "LC_MESSAGES=POSIX" \
+           -e "LANGUAGE=en_US.UTF-8" \
+           -e "LC_CTYPE=en_US.UTF-8" \
+           sotolitolabs-cubie/php-fpm
+
+
+

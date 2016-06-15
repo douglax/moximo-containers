@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#docker run --name="bind" -ti  -p 53:53/udp  -p 53:53  \
+docker run --name="bind" -d -p 53:53 -p 53:53/udp   \
+           -v /var/sotolito/vols/bind/etc/named/:/etc/named/ \
+           -v /var/sotolito/vols/bind//etc/named.conf:/etc/named.conf \
+           -v /var/sotolito/vols/bind/etc/named.iscdlv.key:/etc/named.iscdlv.key \
+           -v /var/sotolito/vols/bind/etc/named.rfc1912.zones:/etc/named.rfc1912.zones \
+           -v /var/sotolito/vols/bind/etc/named.root.key:/etc/named.root.key \
+           -v /var/sotolito/vols/bind/run/named:/run/named \
+           -v /var/sotolito/vols/bind/var/log/:/var/log/ \
+           -v /var/sotolito/vols/bind/var/named/:/var/named/ \
+           -v /var/sotolito/vols/bind/var/run/nscd:/var/run/nscd \
+           -e "LANG=en_US.UTF-8" \
+           -e "LC_MESSAGES=POSIX" \
+           -e "LANGUAGE=en_US.UTF-8" \
+           -e "LC_CTYPE=en_US.UTF-8" \
+           sotolitolabs-cubie/bind  \
+
+
+
