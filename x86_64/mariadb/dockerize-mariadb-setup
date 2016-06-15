@@ -13,7 +13,7 @@ dockerize -t $IMAGE_NAME \
                    --add-file /bin/ls /bin/ls \
                    --add-file /bin/mkdir /bin/mkdir \
                    --add-file /bin/tar /bin/tar \
-                   --add-file volconf.tar /volconf.tar  \
+                   --add-file volconf.tar /volconf.tar.bz2  \
                    --add-file setup.sh /bin/setup.sh \
                    --cmd /bin/setup.sh
 
