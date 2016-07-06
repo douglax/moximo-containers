@@ -26,9 +26,6 @@ done
 
 cd $CONTAINER_PATH/$CONTAINER
 
-#sudo dnf install -y `cat rpms.txt`
-
-dnf info `cat rpms.txt`
-
-ls dockerize-$CONTAINER 
-ls dockerize-$CONTAINER-setup $PASSWORD
+sudo dnf install -y `cat rpms.txt`
+dockerize-$CONTAINER 
+dockerize-$CONTAINER-setup $PASSWORD
