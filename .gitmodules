@@ -1,0 +1,3 @@
+[submodule "docker/mariadb"]
+	path = docker/mariadb
+	url = https://github.com/SotolitoLabs/mariadb.git
