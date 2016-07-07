@@ -1,4 +1,0 @@
-docker run --rm --name="wordpress-setup"  \
-           -v /var/sotolito:/var/sotolito \
-           sotolitolabs-cubie/wordpress-setup
-

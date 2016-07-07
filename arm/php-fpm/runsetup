@@ -1,8 +1,0 @@
-#!/bin/bash
-
-mkdir /var/sotolito
-
-docker run --rm --name="phpfpmetup"  \
-           -v /var/sotolito:/var/sotolito \
-           sotolitolabs-cubie/php-fpm-setup
-

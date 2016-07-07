@@ -1,8 +1,0 @@
-#!/bin/bash
-
-mkdir /var/sotolito
-
-docker run --rm --name="nginxsetup"  \
-           -v /var/sotolito:/var/sotolito \
-           sotolitolabs-cubie/nginx-setup
-
