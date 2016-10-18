@@ -7,7 +7,7 @@ DOCKERIZE=`which dockerize`
 function setup_pkg_manager {
     YUM=`which dnf`
     if [[ ${YUM} == '' ]]; then
-        YUM=`wich yum`
+        YUM=`which yum`
     fi
 }
 
